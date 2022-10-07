@@ -37,18 +37,3 @@ Login
     Sleep           1
     Get Text        data-test=header-user-icon      ==      ${pnastane}
 
-    #otevřít prohlížeč
-
-    #otevřít stránku rohlik.cz
-
-    #ověřit že se stránka otevřela
-
-    #kliknout na Přihlásit
-
-    #zadat email ${pemail} do místa pro zadání emailu
-
-    #zadat heslo ${pheslo} do místa pro zadání hesla
-
-    #klinout na tlačítko "Přihlasit se"
-
-    #ověřit že jsem přihlášený data-test=header-user-icon musí obsahovat to co je v ${pnastane}

@@ -24,16 +24,15 @@ Pridani do kosiku
     Click           xpath=//*[@id="ccp-popup"]/div/div[2]/button[3]  #cookies
     Click           xpath=//*[@id="fulltext"]   #vyhledavac
     Type text       id=fulltext        Mobil
-    Sleep               2
+    Sleep       1
     Click           text=Hledat    #potvrdit button hledat
-    Sleep           2
     Click       text="Honor X7, 4GB/128GB, Black"
-    Sleep       2
+    Sleep       1
     Click       xpath=//*[@id="product-price-and-delivery-section"]/div[5]/button[1]
     Click       xpath=//*[@id="basket-preview"]/a    #kosik
-    Sleep       2
+    Sleep       1
     Click       css=[title="Odstranit z košíku"]
-    Sleep       2
+    Sleep       1
 
 #Odebrani z kosiku
 
@@ -53,16 +52,14 @@ Login
     Type Text       id=frm-name              ${Ujmeno}
     Type Text       id=frm-password          ${heslo}
     Click           xpath=//*[@id="login-form"]/div[4]/button/span      #Button prihlasit
-    Sleep           2
+    Sleep           1
     Take Screenshot
     Click           xpath=//*[@id="login-form"]/div[2]/a  #klik na zapomeli jste heslo?
-    Sleep           2
+    Sleep           1
     Click           xpath=//*[@id="lost-password-popup"]/div/form/div[2]/button  #Button Odeslat
-    Sleep           2
+    Sleep           1
     Click           xpath=//*[@id="lost-password-popup"]/div/button  #krizek
-    Sleep           2
     Click           xpath=//*[@id="popup-login"]/div/button   #krizek
-    Sleep           2
 
 
 

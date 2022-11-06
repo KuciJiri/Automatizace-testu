@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221106 17:44:50.582" rpa="false" schemaversion="3">
+<suite id="s1" name="Regress test czc" source="C:\Users\J5200\PycharmProjects\WebTestAutomation\Regress_test_czc.robot">
+<test id="s1-t1" name="Negative Login" line="12">
+<kw name="Wrong Login/Password">
+<arg>KuciJir1</arg>
+<arg>KuciJiri1</arg>
+<arg>KuciJiri</arg>
+<arg>KuciJiri</arg>
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20221106 17:44:51.301" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\J5200\\PycharmProjects\\WebTestAutomation\\browser\\traces\\a0288f93-19de-4d15-b7fe-ba8822c56ef9"}</msg>
+<msg timestamp="20221106 17:44:51.609" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\J5200\\PycharmProjects\\WebTestAutomation\\browser\\traces\\a0288f93-19de-4d15-b7fe-ba8822c56ef9"}</msg>
+<status status="PASS" starttime="20221106 17:44:51.301" endtime="20221106 17:44:51.609"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20221106 17:44:53.383" level="INFO">Successfully initialized new page object and opened url: https://www.czc.cz/</msg>
+<msg timestamp="20221106 17:44:53.384" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20221106 17:44:51.609" endtime="20221106 17:44:53.384"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>==</arg>
+<arg>CZC.cz - rozumíme vám i elektronice</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" starttime="20221106 17:44:53.384" endtime="20221106 17:44:53.411"/>
+</kw>
+<kw name="Cookies">
+<arg>AcceptAll</arg>
+<if>
+<branch type="IF" condition="&quot;${type}&quot; == &quot;AcceptAll&quot;">
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="ccp-popup"]/div/div[2]/button[3]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:53.412" endtime="20221106 17:44:53.473"/>
+</kw>
+<status status="PASS" starttime="20221106 17:44:53.412" endtime="20221106 17:44:53.473"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="ccp-popup"]/div/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20221106 17:44:53.473" endtime="20221106 17:44:53.473"/>
+</kw>
+<status status="NOT RUN" starttime="20221106 17:44:53.473" endtime="20221106 17:44:53.473"/>
+</branch>
+<status status="PASS" starttime="20221106 17:44:53.412" endtime="20221106 17:44:53.473"/>
+</if>
+<status status="PASS" starttime="20221106 17:44:53.411" endtime="20221106 17:44:53.473"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>id=login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:53.473" endtime="20221106 17:44:54.363"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>id=frm-name</arg>
+<arg>${Fsurname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20221106 17:44:54.363" level="INFO">Types the text 'KuciJir1' in the given field.</msg>
+<status status="PASS" starttime="20221106 17:44:54.363" endtime="20221106 17:44:54.596"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>id=frm-password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20221106 17:44:54.597" level="INFO">Types the text 'KuciJiri1' in the given field.</msg>
+<status status="PASS" starttime="20221106 17:44:54.596" endtime="20221106 17:44:54.784"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="login-form"]/div[4]/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:54.784" endtime="20221106 17:44:54.903"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=//*[@id="login-form"]/div[1]/span[2]</arg>
+<arg>==</arg>
+<arg>Nesprávné přihlašovací jméno</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:54.904" endtime="20221106 17:44:55.040"/>
+</kw>
+<kw name="Clear Text" library="Browser">
+<arg>id=frm-name</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears the text field found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:55.040" endtime="20221106 17:44:55.063"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>id=frm-name</arg>
+<arg>${surname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20221106 17:44:55.063" level="INFO">Types the text 'KuciJiri' in the given field.</msg>
+<status status="PASS" starttime="20221106 17:44:55.063" endtime="20221106 17:44:55.104"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>id=frm-password</arg>
+<arg>${Fpassword}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20221106 17:44:55.104" level="INFO">Types the text 'KuciJiri' in the given field.</msg>
+<status status="PASS" starttime="20221106 17:44:55.104" endtime="20221106 17:44:55.151"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="login-form"]/div[4]/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20221106 17:44:55.151" endtime="20221106 17:44:55.223"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=//*[@id="login-form"]/div[2]/span[2]</arg>
+<arg>==</arg>
+<arg>Nesprávné heslo</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20221106 17:44:56.535" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221106 17:44:56.535" level="FAIL">Text '' (str) should be 'Nesprávné heslo' (str)</msg>
+<status status="FAIL" starttime="20221106 17:44:55.223" endtime="20221106 17:44:56.574"/>
+</kw>
+<kw name="Clear Text" library="Browser">
+<arg>id=frm-password</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears the text field found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20221106 17:44:56.574" endtime="20221106 17:44:56.574"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="popup-login"]/div/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20221106 17:44:56.575" endtime="20221106 17:44:56.575"/>
+</kw>
+<status status="FAIL" starttime="20221106 17:44:51.301" endtime="20221106 17:44:56.575"/>
+</kw>
+<status status="FAIL" starttime="20221106 17:44:51.301" endtime="20221106 17:44:56.576">Text '' (str) should be 'Nesprávné heslo' (str)</status>
+</test>
+<status status="FAIL" starttime="20221106 17:44:50.582" endtime="20221106 17:44:56.626"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Regress test czc">Regress test czc</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

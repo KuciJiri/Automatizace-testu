@@ -63,8 +63,12 @@ Successful Login
     Click                   xpath=//*[@id="login-form"]/div[4]/button
     Sleep                   1
     Get text                id=logged-user        ==       ${check}
+    ${log}=     Get text    id=logged-user
+    Log                     ${log}
+    Take Screenshot
 
 Logout
+    Go to                   ${url}
     Click                   xpath=//*[@id="logged-user"]
     Click                   xpath=//*[@id="blue-menu-wrapper"]/ul[2]/li[2]/div/div[2]/a[1]
     Get text                xpath=//*[@id="login"]     ==     Přihlášení

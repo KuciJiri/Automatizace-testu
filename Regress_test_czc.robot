@@ -10,12 +10,14 @@ ${url}      https://www.czc.cz/
 
 *** Test Cases ***
 Negative Login
-    Wrong Login/Password        KuciJir1             KuciJiri1            KuciJiri             KuciJiri
+    Wrong Login/Password         KuciJir1             KuciJiri1            KuciJiri             KuciJiri
 
 
 
-#Positive Login
-#
+Positive Login
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Logout
+
 #
 #Add Basket
 
@@ -48,4 +50,23 @@ Wrong Login/Password
     Get Text                xpath=//*[@id="login-form"]/div[2]/span[2]      ==      Nesprávné heslo
     Clear Text              id=frm-password
     Click                   xpath=//*[@id="popup-login"]/div/button
+
+Successful Login
+    [Arguments]             ${surname}           ${password}         ${check}
+    New Browser             chromium             headless=false
+    New Page                ${url}
+    Get Title       ==      CZC.cz - rozumíme vám i elektronice
+    Cookies                 AcceptAll
+    Click                   id=login
+    Type text               id=frm-name          ${surname}
+    Type text               id=frm-password      ${password}
+    Click                   xpath=//*[@id="login-form"]/div[4]/button
+    Sleep                   1
+    Get text                id=logged-user        ==       ${check}
+
+Logout
+    Click                   xpath=//*[@id="logged-user"]
+    Click                   xpath=//*[@id="blue-menu-wrapper"]/ul[2]/li[2]/div/div[2]/a[1]
+    Get text                xpath=//*[@id="login"]     ==     Přihlášení
+
 

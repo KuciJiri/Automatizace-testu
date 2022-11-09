@@ -152,6 +152,34 @@ Add wish item
     Go to                   ${url}
 
 Wish List
+    Click                   css=.header-previews__btn.view-basket
+    Sleep                   1
+    take Screenshot
+    Click                   text="Sdílet košík"
+    Sleep                   2
+    Click                   xpath=//*[@id="basket-visibility-container"]/span/span/a[4]/span
+    Click                   xpath=//*[@id="popup-upl"]/div/form/div[3]/button[1]
+    ${wishname}=    Set Variable    My pc
+    Type Text               xpath=//*[@id="frm-title"]           ${wishname}
+    Click                   text="Uložit"
+    Click                   text="Zobrazit seznam"
+    Get text                xpath=//*[@id="list-select-cont"]/div[2]/a[1]       ==      "smazat seznam"
+    ${log}=     Get text    xpath=//*[@id="list-select-cont"]/div[2]/a[1]
+    Log                     ${log}
+    Take Screenshot
+    Click                   xpath=//*[@id="list-select-cont"]/div[2]/a[1]
+    Click                   css=.btn.btn-secondary.confirm
+    Get text                xpath=//*[@id="content"]/div/div/a/div/div          ==      "Vytvořit nový seznam"
+    ${log}=     Get text    xpath=//*[@id="list-select-cont"]/div[2]/a[1]
+    Log                     ${log}
+    Take Screenshot
+
+
+
+
+
+
+
 
 
 

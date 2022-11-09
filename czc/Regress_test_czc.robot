@@ -128,5 +128,12 @@ Add wish item
     Sleep                   1
     Click                   css=.btn.btn-buy
     Sleep                   1
-
+    Go to                   ${url}
+    Click                   xpath=//*[@id="fulltext"]
+    Type Text               xpath=//*[@id="fulltext"]           ${item3}
+    Click                   xpath=//*[@id="wrapper"]/header/div[2]/div/div[1]/form/button
+    Sleep                   1
+    Click                   css=.btn.btn-buy
+    Sleep                   1
+    Go to                   ${url}
 

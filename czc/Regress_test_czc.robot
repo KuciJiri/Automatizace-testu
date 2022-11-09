@@ -11,21 +11,21 @@ ${url}      https://www.czc.cz/
 
 *** Test Cases ***
 
-#Negative Login
-#    Wrong Login                  KuciJir1             KuciJiri1
-#    Wrong Password               KuciJiri             KuciJiri
-#
+Negative Login
+    Wrong Login                  KuciJir1             KuciJiri1
+    Wrong Password               KuciJiri             KuciJiri
 
 
-#Positive Login
-#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-#    Logout
-#
-#
-#Add Basket
-#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-#    Add item                     Flash Disky          5
-#    Logout
+
+Positive Login
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Logout
+
+
+Add Basket
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Add item                     Flash Disky          5
+    Logout
 
 Basket wish list
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
@@ -59,7 +59,7 @@ Timeout
 
 Wrong Login
     [Arguments]             ${Fsurname}           ${password}
-    New Browser             chromium             headless=false
+    New Browser             chromium             #headless=false
     New Page                ${url}
     Get Title       ==      CZC.cz - rozumíme vám i elektronice
     Cookies                 AcceptAll
@@ -157,7 +157,7 @@ Wish List
     Sleep                   1
     take Screenshot
     Click                   text="Sdílet košík"
-    Sleep                   2
+    Sleep                   1
     Click                   xpath=//*[@id="basket-visibility-container"]/span/span/a[4]/span
     Click                   xpath=//*[@id="popup-upl"]/div/form/div[3]/button[1]
     ${wishname}=    Set Variable    My pc

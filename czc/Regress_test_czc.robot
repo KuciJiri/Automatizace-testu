@@ -27,7 +27,7 @@ Add and remove items in Basket
     Add item                     Flash Disky          5
     Logout
 
-Basket wish list
+Create wish list in basket
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
     Add wish item               Grafické Karty          Operační Paměti     Procesory       Zdroje
     Wish List

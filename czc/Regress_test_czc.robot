@@ -162,18 +162,21 @@ Wish List
     Click                   xpath=//*[@id="popup-upl"]/div/form/div[3]/button[1]
     ${wishname}=    Set Variable    My pc
     Type Text               xpath=//*[@id="frm-title"]           ${wishname}
+    Sleep                   1
     Click                   text="Uložit"
+    Sleep                   1
     Click                   text="Zobrazit seznam"
-    Get text                xpath=//*[@id="list-select-cont"]/div[2]/a[1]       ==      "smazat seznam"
-    ${log}=     Get text    xpath=//*[@id="list-select-cont"]/div[2]/a[1]
-    Log                     ${log}
+    Click                   xpath=//*[@id="user-info-left-panel"]/ul/li[3]/details/ul/li[2]
     Take Screenshot
-    Click                   xpath=//*[@id="list-select-cont"]/div[2]/a[1]
-    Click                   css=.btn.btn-secondary.confirm
-    Get text                xpath=//*[@id="content"]/div/div/a/div/div          ==      "Vytvořit nový seznam"
-    ${log}=     Get text    xpath=//*[@id="list-select-cont"]/div[2]/a[1]
-    Log                     ${log}
+    ${name}=     Get text    xpath=//*[@id="content"]/div/div[2]/a[1]/div/div[1]
+    Log                     ${name}
+    Get text                xpath=//*[@id="content"]/div/div[2]/a[1]/div/div[1]     ==      ${name}
     Take Screenshot
+    Click                   xpath=//*[@id="content"]/div/div[2]/a[2]
+    Sleep                   1
+    Click                   xpath=/html/body/div[4]/div/button[1]
+    Sleep                   1
+    Should Not Contain      xpath=//*[@id="content"]/div/div[2]/a[1]/div/div[1]     ==     ${name}
 
 
 

@@ -28,12 +28,9 @@ ${url}      https://www.czc.cz/
 
 Basket wish list
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-    Add item2
-    Add Item3
-    Add Item4
-    Add Item5
-    Wish List
-    Logout
+    Add wish item               Grafické Karty          Operační Paměti     Procesory       Zdroje
+#    Wish List
+#    Logout
 
 
 
@@ -122,7 +119,14 @@ Add item
     Click                   css=.btn-circle-remove
     Timeout
 
-Add item2
-
+Add wish item
+    [Arguments]             ${item2}    ${item3}    ${item4}    ${item5}
+    ${old_mode} =   Set Strict Mode     false
+    Click                   xpath=//*[@id="fulltext"]
+    Type Text               xpath=//*[@id="fulltext"]           ${item2}
+    Click                   xpath=//*[@id="wrapper"]/header/div[2]/div/div[1]/form/button
+    Sleep                   1
+    Click                   css=.btn.btn-buy
+    Sleep                   1
 
 

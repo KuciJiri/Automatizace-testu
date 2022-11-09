@@ -9,10 +9,11 @@ ${url}      https://www.czc.cz/
 
 
 *** Test Cases ***
-Negative Login
-    Wrong Login                  KuciJir1             KuciJiri1
-    Wrong Password               KuciJiri             KuciJiri
 
+#Negative Login
+#    Wrong Login                  KuciJir1             KuciJiri1
+#    Wrong Password               KuciJiri             KuciJiri
+#
 
 
 #Positive Login
@@ -24,6 +25,15 @@ Negative Login
 #    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
 #    Add item                     Flash Disky          5
 #    Logout
+
+Basket wish list
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Add item2
+    Add Item3
+    Add Item4
+    Add Item5
+    Wish List
+    Logout
 
 
 
@@ -41,7 +51,7 @@ Timeout
     Log             ${empty}
 
     FOR     ${i}     IN RANGE    10
-            Sleep           200ms
+            Sleep            200ms
             ${empty} =       Get Text       xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong
             Exit For Loop If      'xpath=//*[@id="basket-visibility-container"]/h1' in '''${empty}'''
 
@@ -111,6 +121,8 @@ Add item
     Take Screenshot
     Click                   css=.btn-circle-remove
     Timeout
+
+Add item2
 
 
 

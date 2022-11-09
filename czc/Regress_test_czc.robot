@@ -1,5 +1,6 @@
 *** Settings ***
 Library     Browser
+Library     DebugLibrary
 
 
 

@@ -25,14 +25,12 @@ ${url}      https://www.czc.cz/
 #Add Basket
 #    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
 #    Add item                     Flash Disky          5
-#    Empty basket
 #    Logout
 
 Basket wish list
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
     Add wish item               Grafické Karty          Operační Paměti     Procesory       Zdroje
     Wish List
-    Empty basket
     Logout
 
 
@@ -119,8 +117,8 @@ Add item
     Click                   css=.up     clickCount=${amount}
     Sleep                   1
     Take Screenshot
-    #Click                   css=.btn-circle-remove
-    #Timeout
+    Click                   css=.btn-circle-remove
+    Timeout
 
 Add wish item
     [Arguments]             ${item2}    ${item3}    ${item4}    ${item5}
@@ -180,16 +178,12 @@ Wish List
     Sleep                   1
     Should Not Contain      xpath=//*[@id="content"]/div/div[2]/a[1]/div/div[1]     ==     ${name}
 
-Empty basket
-    Go to                   ${url}
-    Click                   xpath=//*[@id="basket-preview"]/a
 
-    FOR     ${i}     IN RANGE    10
-            Sleep            500ms
-            Click       css=.btn-circle-remove
-            Exit For Loop If      'xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong'
-            Log    ${i}
-    END
+
+
+
+
+
 
 
 

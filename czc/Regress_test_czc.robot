@@ -22,7 +22,7 @@ Positive Login
     Logout
 
 
-Add Basket
+Add and remove items in Basket
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
     Add item                     Flash Disky          5
     Logout

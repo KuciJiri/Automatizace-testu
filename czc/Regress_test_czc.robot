@@ -2,6 +2,9 @@
 Library     Browser
 Library     DebugLibrary
 
+Test Setup    Before_tests
+Test Teardown    After_tests
+
 
 
 
@@ -185,8 +188,15 @@ Wish List_NewFunction
 
 
 
+Before_tests
+    ${timeout}=     Set Browser Timeout         20s
+    Log             ${timeout}
 
 
+
+
+After_tests
+    Log             konec
 
 
 

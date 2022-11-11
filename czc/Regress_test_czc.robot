@@ -6,6 +6,7 @@ Library     DebugLibrary
 
 
 
+
 *** Variables ***
 ${url}      https://www.czc.cz/
 
@@ -13,15 +14,15 @@ ${url}      https://www.czc.cz/
 
 *** Test Cases ***
 
-#Negative Login
-#    Wrong Login                  KuciJir1             KuciJiri1
-#    Wrong Password               KuciJiri             KuciJiri
-#
-#
-#
-#Positive Login
-#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-#    Logout
+Negative Login
+    Wrong Login                  KuciJir1             KuciJiri1
+    Wrong Password               KuciJiri             KuciJiri
+
+
+
+Positive Login
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Logout
 
 
 Add and remove items in Basket
@@ -29,11 +30,11 @@ Add and remove items in Basket
     Add item                     Flash Disky          5
     Logout
 
-#Create wish list in basket
-#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-#    Add more item               Grafické Karty          Operační Paměti     Procesory       Zdroje
-#    Wish List_NewFunction
-#    Logout
+Create wish list in basket
+    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+    Add more item               Grafické Karty          Operační Paměti     Procesory       Zdroje
+    Wish List_NewFunction
+    Logout
 
 
 

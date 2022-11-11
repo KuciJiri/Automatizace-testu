@@ -4,6 +4,8 @@ Library     DebugLibrary
 
 
 
+
+
 *** Variables ***
 ${url}      https://www.czc.cz/
 
@@ -11,15 +13,15 @@ ${url}      https://www.czc.cz/
 
 *** Test Cases ***
 
-Negative Login
-    Wrong Login                  KuciJir1             KuciJiri1
-    Wrong Password               KuciJiri             KuciJiri
-
-
-
-Positive Login
-    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-    Logout
+#Negative Login
+#    Wrong Login                  KuciJir1             KuciJiri1
+#    Wrong Password               KuciJiri             KuciJiri
+#
+#
+#
+#Positive Login
+#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+#    Logout
 
 
 Add and remove items in Basket
@@ -27,11 +29,11 @@ Add and remove items in Basket
     Add item                     Flash Disky          5
     Logout
 
-Create wish list in basket
-    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-    Add more item               Grafické Karty          Operační Paměti     Procesory       Zdroje
-    Wish List_NewFunction
-    Logout
+#Create wish list in basket
+#    Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
+#    Add more item               Grafické Karty          Operační Paměti     Procesory       Zdroje
+#    Wish List_NewFunction
+#    Logout
 
 
 
@@ -45,21 +47,21 @@ Cookies
     END
 
 Timeout
-    ${empty} =      Get Text    xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong      #vytahne text/kosik je prazdny
-    Log             ${empty}
+    ${Carttext} =      Get Text         xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong
+    Log             ${carttext}
 
     FOR     ${i}     IN RANGE    10
             Sleep            200ms
-            ${empty} =       Get Text       xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong
-            Exit For Loop If      'xpath=//*[@id="basket-visibility-container"]/h1' in '''${empty}'''
+            ${Carttext} =       Get Text       xpath=//*[@id="basket-visibility-container"]/div/div/h1/strong
+            Exit For Loop If      'košík je prázdný' in '''${Carttext}'''
 
-            Log    ${empty}
+            Log    ${Carttext}
             Log    ${i}
     END
 
 Wrong Login
     [Arguments]             ${Fsurname}           ${password}
-    New Browser             chromium             #headless=false
+    New Browser             chromium             headless=false
     New Page                ${url}
     Get Title       ==      CZC.cz - rozumíme vám i elektronice
     Cookies                 AcceptAll

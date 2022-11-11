@@ -29,8 +29,8 @@ Add and remove items in Basket
 
 Create wish list in basket
     Successful Login             KuciJiri             KuciJiri1          Jirka Kucera (KuciJiri)
-    Add wish item               Grafické Karty          Operační Paměti     Procesory       Zdroje
-    Wish List
+    Add more item               Grafické Karty          Operační Paměti     Procesory       Zdroje
+    Wish List_NewFunction
     Logout
 
 
@@ -120,7 +120,7 @@ Add item
     Click                   css=.btn-circle-remove
     Timeout
 
-Add wish item
+Add more item
     [Arguments]             ${item2}    ${item3}    ${item4}    ${item5}
     ${old_mode} =   Set Strict Mode     false
     Click                   xpath=//*[@id="fulltext"]
@@ -152,7 +152,7 @@ Add wish item
     Sleep                   1
     Go to                   ${url}
 
-Wish List
+Wish List_NewFunction
     Click                   css=.header-previews__btn.view-basket
     Sleep                   1
     take Screenshot

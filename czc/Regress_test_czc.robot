@@ -2,6 +2,11 @@
 Library     Browser
 Library     DebugLibrary
 
+Test Setup    Before_tests
+Test Teardown    After_tests
+
+Test Timeout    2 minutes
+
 
 
 
@@ -75,7 +80,7 @@ Wrong Login
 
 Wrong Password
     [Arguments]             ${surname}           ${Fpassword}
-    Go to                   ${url}
+#    Go to                   ${url}
     Get Title       ==      CZC.cz - rozumíme vám i elektronice
     Click                   id=login
     Type text               id=frm-name          ${surname}
@@ -185,8 +190,16 @@ Wish List_NewFunction
 
 
 
+Before_tests
+    ${timeout}=     Set Browser Timeout         20s
+    Log             ${timeout}
 
 
+
+
+After_tests
+    Go to           ${url}
+    Log             konec
 
 
 
